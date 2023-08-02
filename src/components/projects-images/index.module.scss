@@ -1,0 +1,17 @@
+@import '../../styles/base';
+.imgWrapper {
+  height: 339px;
+  @include md {
+    height: 235px;
+  }
+}
+.imgWrapper2 {
+  height: 223px;
+  @include md {
+    height: 235px;
+  }
+}
+.imgWrapper2,
+.imgWrapper {
+  overflow: hidden;
+}

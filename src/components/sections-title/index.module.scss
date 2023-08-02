@@ -1,0 +1,20 @@
+@import '../../styles/base';
+
+.sectionTitle {
+  margin-bottom: 40px;
+  text-align: center;
+  color: $primary-color;
+  span {
+    display: inline-block;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 96px;
+      border-top: 3px solid $secondary-color;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

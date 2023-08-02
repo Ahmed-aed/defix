@@ -1,0 +1,18 @@
+@import '../../styles/base';
+
+.suspenseWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  @include full-w-h;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  background-color: $white-color;
+  :global {
+    .spinner-border {
+      //   border-color: $primary-color;
+    }
+  }
+}

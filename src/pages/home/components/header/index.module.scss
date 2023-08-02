@@ -1,0 +1,41 @@
+@import '../../../../styles/base';
+
+.headerItem {
+  position: relative;
+  &:after {
+    content: '';
+    @include full-w-h;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: $black-color, $alpha: 0.36);
+  }
+}
+
+.headerItemContent {
+  // direction: rtl;
+  position: relative;
+  z-index: 9;
+  min-height: calc(100vh - 152px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+  @include sm {
+    padding: 20px 0;
+    min-height: 600px;
+  }
+  h1 {
+    color: $secondary-color;
+    margin-bottom: 20px;
+  }
+  p {
+    color: $white-color;
+    width: 90%;
+    margin-bottom: 20px;
+    font-size: var(--font-18);
+  }
+  @include xs {
+    text-align: center;
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../styles/base';
+.changeLang {
+  position: relative;
+  z-index: 999;
+  button {
+    background-color: transparent;
+    border: 0;
+    svg {
+      margin-inline-start: 5px;
+      path {
+        fill: $white-color;
+      }
+      width: 25px;
+      height: 25px;
+    }
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.dropdownMenu {
+  min-width: 80px;
+  background-color: $primary-color;
+
+  z-index: 999;
+  :global {
+    .disabled {
+      color: $white-color;
+      opacity: 0.5;
+    }
+  }
+}
+.dropdownMenuItem {
+  color: $white-color;
+  &:focus,
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.changeLangPrimary.changeLangPrimary {
+  svg {
+    path {
+      fill: $primary-color;
+    }
+  }
+  span {
+    color: $primary-color;
+  }
+}

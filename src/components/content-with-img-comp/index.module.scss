@@ -1,0 +1,24 @@
+@import '../../styles/base';
+
+.contentWithImageCompWrap {
+  margin-bottom: 80px;
+  h4 {
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+  p {
+    color: $black-color;
+    font-size: var(--font-18);
+  }
+}
+.image {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  @include sm {
+    height: 250px;
+  }
+  @include xxs {
+    height: 200px;
+  }
+}

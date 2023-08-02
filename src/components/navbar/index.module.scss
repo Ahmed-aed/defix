@@ -1,0 +1,220 @@
+@import '../../styles/base';
+.navbar.navbar {
+  padding: 20px 0;
+  background-color: $primary-color;
+  transition: all 0.3s ease-in-out;
+  @include md {
+    padding: 15px 0;
+  }
+  @include lg {
+    .ctaWrap,
+    ul {
+      display: none;
+    }
+  }
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+}
+.linksWrapper {
+  display: flex;
+  li {
+    &:not(:last-child) {
+      padding-inline-end: 50px;
+    }
+  }
+  a {
+    display: inline-block;
+    color: $white-color;
+    font-size: var(--nav-links-font-size);
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      inset-inline-start: 0;
+      width: 0;
+      border-top: 2px solid $secondary-color;
+      transition: width 0.3s ease-in-out;
+    }
+    &.active,
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+.navbarWrapper.navbarWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ctaWrap {
+  display: block;
+}
+
+.navbarBrand {
+  width: 130px;
+  height: 40px;
+  overflow: hidden;
+  @include md {
+    width: 100px;
+    height: 30px;
+  }
+}
+
+.sideMenu {
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  inset-inline-start: -300px;
+  height: 100%;
+  width: 250px;
+  background-color: $primary-color;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+  display: none;
+  &.opened {
+    inset-inline-start: 0;
+  }
+  @include lg {
+    display: block;
+  }
+}
+
+.sideMenuLinksWrapper.sideMenuLinksWrapper {
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+
+  .navbarBrand {
+    flex: 0 0 40px;
+    width: 130px;
+    height: 40px;
+  }
+  .changeLangCtaWrap {
+    margin-top: auto;
+  }
+  ul {
+    align-self: stretch;
+    flex-direction: column;
+    padding: 30px 0 !important;
+    max-height: calc(100vh - 80px);
+    overflow: auto;
+    direction: ltr;
+    margin-bottom: 30px !important;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: rgba($color: $secondary-color, $alpha: 0.1);
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $secondary-color;
+      border-radius: 20px;
+    }
+    li {
+      padding: 0;
+      flex: 1;
+    }
+    a {
+      width: 100%;
+      display: block;
+      padding: 15px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba($color: $secondary-color, $alpha: 0.2);
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include full-w-h;
+  background-color: rgba($color: $black-color, $alpha: 0.8);
+  z-index: 999;
+  display: none;
+  @include lg {
+    display: block;
+  }
+}
+
+.menuToggler {
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  padding: 0;
+  display: none;
+  @include lg {
+    display: flex;
+  }
+  svg {
+    fill: $white-color;
+    stroke: $white-color;
+    width: 35px;
+    height: 35px;
+    @include md {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.changeLangCtaWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.whiteNav.whiteNav {
+  background-color: $white-color;
+  filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.06));
+  .linksWrapper {
+    a {
+      color: $primary-color;
+      &:after {
+        border-color: $primary-color;
+      }
+    }
+  }
+  .ctaWrap {
+    button {
+      transition: all 0.3s ease-in-out;
+      background-image: linear-gradient(to right, $primary-color, #0498ff);
+      &:hover {
+        background-image: linear-gradient(to right, #826b10, $secondary-color);
+        color: $white-color;
+      }
+    }
+  }
+  .menuToggler {
+    svg {
+      fill: $primary-color;
+      stroke: $primary-color;
+    }
+  }
+}
+
+:global {
+  html[lang='en'] {
+    .menu-toggler {
+      transform: scale(-1, 1);
+    }
+  }
+}

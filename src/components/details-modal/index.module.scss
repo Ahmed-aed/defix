@@ -1,0 +1,59 @@
+@import '../../styles/base';
+.detailsModal {
+  max-width: 1200px;
+  :global {
+    .modal-body {
+      padding: 57px;
+      @include md {
+        padding: 30px;
+      }
+    }
+  }
+}
+.detailsModalImg {
+  height: 470px;
+}
+.detailsModalTitle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #333333;
+
+  .icon {
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+    background-color: rgba($color: #68838f, $alpha: 0.1);
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  background-color: $white-color;
+  width: 40px;
+  height: 40px;
+  transform: translate(0, -50%);
+  border-radius: 50%;
+  @include md {
+    transform: translate(0, -25%);
+  }
+  border: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.subImageWrapper {
+  margin-top: 20px;
+  height: 250px;
+  overflow: hidden;
+}

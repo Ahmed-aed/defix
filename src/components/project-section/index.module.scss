@@ -1,0 +1,14 @@
+@import '../../styles/base';
+.projectsSection {
+  p {
+    margin-bottom: 30px;
+  }
+}
+.moreBtnWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  button {
+    padding: 10px 60px;
+  }
+}

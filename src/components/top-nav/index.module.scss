@@ -1,0 +1,70 @@
+@import '../../styles/base';
+
+.topNavWrapper {
+  padding: 17px 0;
+  background-color: $light-white-color;
+  @include md {
+    padding: 10px 0;
+  }
+  p,
+  li,
+  a {
+    color: $grey-color;
+    @include md {
+      font-size: 14px;
+    }
+  }
+}
+
+.topNavInnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  @include xs {
+    flex-direction: column;
+  }
+}
+
+.topNavOpenDays {
+  span {
+    display: inline-block;
+    &:first-child {
+      margin-inline-end: 25px;
+    }
+  }
+}
+
+.topNavContact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  li {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      svg {
+        width: 25px;
+        height: 25px;
+        path {
+          transition: all 0.3s ease-in-out;
+        }
+        @include md {
+          width: 15px;
+          height: 15px;
+        }
+      }
+      &:hover {
+        color: darken($color: $secondary-color, $amount: 0.5);
+        path {
+          fill: $secondary-color;
+        }
+      }
+      .text {
+        margin-bottom: -4px;
+      }
+    }
+  }
+}

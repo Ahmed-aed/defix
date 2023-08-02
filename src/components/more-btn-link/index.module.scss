@@ -1,0 +1,41 @@
+@import '../../styles/base';
+.moreBtnLink {
+  color: #013147;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  font-weight: $bold;
+  gap: 5px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  span {
+    display: inline-block;
+  }
+  svg {
+    position: relative;
+    bottom: -3px;
+    path {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &:hover {
+    color: rgba($color: #013147, $alpha: 0.9);
+    svg {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-10px);
+      path {
+        fill: rgba($color: #013147, $alpha: 0.9);
+      }
+    }
+  }
+}
+:global {
+  html[lang='en'] {
+    &:hover {
+      svg {
+        transform: translateX(10px);
+      }
+    }
+  }
+}

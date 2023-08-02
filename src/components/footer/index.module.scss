@@ -1,0 +1,62 @@
+@import '../../styles/base';
+.footer {
+  padding: 30px 0;
+  background-color: #010017;
+  p {
+    font-weight: $medium;
+    color: #cfcfcf;
+  }
+  .footerLogo {
+    display: block;
+    width: 145px;
+    height: 45px;
+  }
+  .footerInnerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    @include md {
+      flex-direction: column;
+    }
+  }
+
+  .startFooterSection,
+  .endFooterSection {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+  .startFooterSection {
+    @include md {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+  .endFooterSection {
+    gap: 30px;
+  }
+  .socialList {
+    display: flex;
+    gap: 15px;
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      border: 1px solid #fdcb06;
+      transition: all 0.3s ease-in-out;
+      path {
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        border-color: $white-color;
+        path {
+          fill: $white-color;
+        }
+      }
+    }
+  }
+}

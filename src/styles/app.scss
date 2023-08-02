@@ -1,0 +1,140 @@
+@import './base';
+:root {
+  --theme-font: 'DIN Next LT W23';
+  --h1-font-size: 45px;
+  --h2-font-size: 35px;
+  --h3-font-size: 30px;
+  --h4-font-size: 25px;
+  --h5-font-size: 20px;
+  --text-font-size: 16px;
+  --nav-links-font-size: 18px;
+  --btn-font-size: 18px;
+  --parag-font-size: 16px;
+  // font sizes
+  --font-18: 18px;
+  --font-20: 20px;
+
+  @include md {
+    --h1-font-size: 40px;
+    --h2-font-size: 30px;
+    --h3-font-size: 25px;
+    --h4-font-size: 20px;
+    --h5-font-size: 18px;
+    // font sizes
+    --font-18: 16px;
+    --font-20: 18px;
+  }
+
+  @include sm {
+    --h1-font-size: 35px;
+    --h2-font-size: 25px;
+    --h3-font-size: 20px;
+    --h4-font-size: 18px;
+    --h5-font-size: 16px;
+  }
+}
+
+body {
+  direction: rtl;
+  font-family: var(--theme-font) !important;
+  overflow-x: hidden;
+}
+
+html[lang='en'] {
+  body {
+    direction: ltr;
+  }
+  &:hover {
+    svg {
+      transform: none;
+    }
+  }
+}
+
+/* ========================================== 
+                 Typography styles 
+ ========================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  position: relative;
+  font-weight: $bold;
+  margin: 0;
+  background: none;
+  font-family: var(--theme-font);
+  color: $black-color-2;
+}
+
+p,
+.p {
+  font-weight: $normal;
+  font-size: var(--parag-font-size);
+  line-height: 1.7;
+  margin-bottom: 0;
+  color: $text-color;
+}
+h1,
+.h1 {
+  font-size: var(--h1-font-size);
+  line-height: 1.4;
+}
+h2,
+.h2 {
+  font-size: var(--h2-font-size);
+  line-height: 1.44;
+  margin-bottom: 25px;
+}
+h3,
+.h3 {
+  font-size: var(--h3-font-size);
+  line-height: 1.4;
+}
+h4,
+.h4 {
+  font-size: var(--h4-font-size);
+}
+h5,
+.h5 {
+  font-size: var(--h5-font-size);
+}
+h6,
+.h6 {
+  font-size: var(--h6-font-size);
+}
+
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.img-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bg-cover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img-bg {
+  background-color: rgba($color: $primary-color, $alpha: 0.1);
+}

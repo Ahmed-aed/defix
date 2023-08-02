@@ -1,0 +1,67 @@
+@import '../../styles/base';
+.pagesHeader {
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  background-image: linear-gradient(to right, $primary-color, #0386e0);
+}
+.pagesHeaderContentWrapper {
+  min-height: 383px;
+  padding: 50px 0;
+  @include lg {
+    min-height: 280px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2,
+  p {
+    color: $white-color;
+  }
+  h2 {
+    margin-bottom: 40px;
+    span {
+      &:after {
+        width: 65%;
+      }
+    }
+  }
+  p {
+    font-weight: $normal;
+    font-size: var(--font-18);
+  }
+}
+.pagesHeaderTopShape {
+  top: 0;
+  inset-inline-end: 0;
+  transform: translate(-33%, -30%);
+}
+.pagesHeaderBottomShape {
+  bottom: 0;
+  inset-inline-start: 0;
+  transform: translate(33%, 30%);
+}
+.pagesHeaderTopShape,
+.pagesHeaderBottomShape {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  @include md {
+    width: 200px;
+    height: 200px;
+  }
+  svg {
+    @include full-w-h;
+  }
+}
+
+:global {
+  html[lang='en'] {
+    .header-top-shape {
+      transform: translate(32%, 56%);
+    }
+    .header-bottom-shape {
+      transform: translate(-32%, -56%);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../styles/base';
+.projectCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 18px 27px;
+  border: 1px solid #707070;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include full-w-h;
+    background-image: linear-gradient(
+      to bottom,
+      rgba($color: $white-color, $alpha: 0.8),
+      rgba($color: $white-color, $alpha: 0.8)
+    );
+  }
+  .projectCardImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include full-w-h;
+    z-index: -1;
+  }
+  .projectCardContent {
+    padding-top: 40px;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    h5 {
+      color: #333333;
+      margin-bottom: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+    p {
+      color: $black-color;
+      @include noOfLines(4);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &:hover {
+    &:after {
+      background-image: linear-gradient(
+        to bottom,
+        rgba($color: $white-color, $alpha: 0.22),
+        #2e2e2e
+      );
+    }
+    .projectCardContent {
+      * {
+        color: $white-color;
+      }
+      path {
+        fill: $white-color;
+      }
+    }
+  }
+}
