@@ -24,6 +24,10 @@
       text-align: center;
     }
     .statisticsItemImage {
+      img {
+        width: 45px;
+        height: 45px;
+      }
       width: 74px;
       height: 74px;
       flex: 0 0 74px;

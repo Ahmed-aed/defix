@@ -28,7 +28,6 @@ export const Statistics = ({ data }: statisticsProps) => {
                   <div className={styles.statisticsItemImage}>
                     <img
                       loading='lazy'
-                      className='img-bg'
                       alt={getValueByLang(item?.title_ar, item?.title_en)}
                       src={item?.icon}
                     />
