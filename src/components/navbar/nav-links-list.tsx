@@ -25,6 +25,7 @@ export const NavLinksList = ({
   setSideMenuOpen,
   data,
   isWhiteBg = false,
+
 }: NavLinksListProps) => {
   const navLinks = [
     {
@@ -132,7 +133,7 @@ export const NavLinksList = ({
           </button>
         )}
 
-        <Link to={`https://api.whatsapp.com/send/?phone=${data?.phone}`} className={`${styles.ctaWrap} ctaWrap`}>
+        <Link to={`https://api.whatsapp.com/send/?phone=${data?.phone}`} className={`${styles.ctaWrap} cta-wrap`}>
           <Button onClick={closeSideMenu} type='outlined-white' fullRadius>
 
             <BiLang

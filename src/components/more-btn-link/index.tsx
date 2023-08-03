@@ -17,7 +17,7 @@ const MoreBtnLink = ({ link, text, onClick }: MoreBtnLinkProps) => {
           <ArrowLeft />
         </Link>
       ) : (
-        <button onClick={onClick} className={styles.moreBtnLink}>
+        <button onClick={onClick} className={`${styles.moreBtnLink} more-btn-link`}>
           <span> {text}</span>
           <ArrowLeft />
         </button>

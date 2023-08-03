@@ -30,11 +30,18 @@
     }
   }
 }
+
 :global {
   html[lang='en'] {
-    &:hover {
+    .more-btn-link {
       svg {
-        transform: translateX(10px);
+        transform: scale(-1, 1) !important;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(10px) scale(-1, 1) !important;
+        }
       }
     }
   }

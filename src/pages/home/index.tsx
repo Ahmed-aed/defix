@@ -56,7 +56,7 @@ const Home = () => {
     <div>
       <PagesWrapper loading={isLoading}>
         <Header bodyData={data} />
-        <AboutSection aboutSection={data} />
+        <AboutSection aboutSection={data} withMoreBtn />
         <Services
           withMoreBtn={true}
           selectedTab={activeTab}
