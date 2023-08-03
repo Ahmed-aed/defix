@@ -26,16 +26,28 @@ const Home = () => {
     }
   }, [data]);
 
+  const scrollIntoViewWithOffset = (
+    element: HTMLElement,
+    offset: number = 0
+  ) => {
+    const rect = element.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const finalScrollTop = rect.top + scrollTop - offset;
+
+    window.scroll({
+      top: finalScrollTop,
+      behavior: 'smooth',
+
+    });
+  };
+
   useEffect(() => {
     if (searchParams.get('focusedSection')) {
       const targetSectionId = searchParams.get('focusedSection');
       const targetSection = document.getElementById(targetSectionId);
       if (targetSection && !isLoading) {
         setActiveLinkItem(targetSectionId);
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-        });
+        scrollIntoViewWithOffset(targetSection, targetSectionId === 'achievement' ? 0 : 50)
       }
     }
   }, [searchParams, isLoading]);

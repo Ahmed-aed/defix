@@ -216,5 +216,17 @@
     .menu-toggler {
       transform: scale(-1, 1);
     }
+    .links-wrapper {
+      li {
+        &:not(:last-child) {
+          padding-inline-end: 20px;
+        }
+      }
+    }
+    .cta-wrap {
+      button {
+        padding: 10px 20px;
+      }
+    }
   }
 }

@@ -23,18 +23,10 @@ const TopNav = ({ headerData }: TopNavProps) => {
             </p>
           </div>
           <ul className={styles.topNavContact}>
-            <li>
-              <a
-                href={`https://api.whatsapp.com/send/?phone=${headerData?.whatsApp}`}
-                target='_blank'
-              >
-                <span>
-                  <WhatsappIcon />
-                </span>
-              </a>
-            </li>
+
             <li>
               <a href={`mailto:${headerData?.email}`} target='_blank'>
+                <span>{headerData?.email}</span>
                 <span>
                   <MailIcon />
                 </span>

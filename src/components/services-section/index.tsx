@@ -4,7 +4,7 @@ import SectionsWrapper from '../sections-wrapper';
 import SectionsTitle from '../sections-title';
 import Tabs from '../tabs';
 import Button from '../button';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, Route, useNavigate } from 'react-router-dom';
 import { ROUTES, manualTranslatedItems } from '../../constants';
 import Subtext from '../subtext';
 import { getValueByLang } from '../../utils';
@@ -32,6 +32,7 @@ const ServiceCards = ({
   onDetailsBtnClick,
   withDetailsBtn = false,
 }: ServiceCardsProps) => {
+  const navigate = useNavigate()
   return (
     <Row className='gy-4 justify-content-center'>
       {servicesDataList?.map((item: IServiceItem) => (
@@ -43,9 +44,9 @@ const ServiceCards = ({
                 ? () => onDetailsBtnClick(item as IServiceItem)
                 : undefined
             }
-            moreBtnLink={
-              !onDetailsBtnClick ? `${ROUTES.services}/${item.id}` : undefined
-            }
+            /*   moreBtnLink={
+                !onDetailsBtnClick ? `${ROUTES.services}/${item.id}` : undefined
+              } */
             iconHaveBg
             iconLink={item?.icon}
             title={getValueByLang(item?.title_ar, item?.title_en)}

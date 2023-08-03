@@ -121,6 +121,8 @@ export interface ProjectsHome {
   description_ar: string;
   description_en: string;
   master_image: string;
+  sub_image_ar: string;
+  sub_image_en: string;
   sub_image: string;
   business_id: number;
   status: string;

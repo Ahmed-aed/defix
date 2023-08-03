@@ -1,4 +1,5 @@
 @import '../../styles/base';
+@import '../../styles/mixins';
 
 .websiteCard {
   padding: 20px 25px;
@@ -9,6 +10,9 @@
   height: 100%;
   h5,
   p {
+    color: $black-color;
+    @include noOfLines(3);
+
     transition: all 0.3s ease-in-out;
   }
   &.hovered {
@@ -17,6 +21,10 @@
       h5,
       p {
         color: $white-color;
+      }
+      img {
+        filter: invert(70%) sepia(1000%) saturate(700%);
+        border-radius: 3px;
       }
     }
   }

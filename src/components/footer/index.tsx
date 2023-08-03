@@ -46,15 +46,13 @@ const Footer = ({ footerData }: FooterDataProps) => {
               <li>
                 <a
                   href={`${footerData?.snapChat}`}
-                  // title='تابع ديفكس عبر سنابشات'
                 >
                   <SnapShatIcon />
                 </a>
               </li>
               <li>
                 <a
-                  href={`${footerData?.twitter}`}
-                  // title='تابع ديفكس عبر انستقرام'
+                  href={`${footerData?.instagram}`}
                 >
                   <InstaIcon />
                 </a>

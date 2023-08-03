@@ -7,6 +7,7 @@ export interface IServiceSectionData {
 }
 
 export interface IService {
+  projects_home: ProjectsHome[];
   id: number;
   title_ar: string;
   title_en: string;
@@ -39,4 +40,20 @@ export interface IServiceDetails {
   descriptionOurServicesAr: string;
   descriptionOurServicesEn: string;
   business: IService[];
+}
+
+
+export interface ProjectsHome {
+  id: number
+  title_ar: string
+  title_en: string
+  description_ar: string
+  description_en: string
+  master_image: string
+  sub_image_ar: string
+  sub_image_en: string
+  business_id: number
+  status: string
+  created_at: string
+  updated_at: string
 }

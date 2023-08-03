@@ -28,15 +28,15 @@ export const AboutSection = ({ aboutSection }: AboutSectionProps) => {
           <Row className='gy-4'>
             {aboutSection?.aboutHome?.map(item => (
               <Col xl='4' lg='6' key={item.id}>
-                <Link to={`${ROUTES.aboutUs}`}>
-                  <WebsiteCard
-                    hovered
-                    iconLink={item.image}
-                    title={item.title_ar}
-                    text={item.description_ar}
-                  />
-                </Link>
-              </Col>
+                {/*                 <Link to={`${ROUTES.aboutUs}`}>
+ */}                  <WebsiteCard
+                  hovered
+                  iconLink={item.image}
+                  title={item.title_ar}
+                  text={item.description_ar}
+                />
+                {/*                 </Link>
+ */}              </Col>
             ))}
           </Row>
         </div>

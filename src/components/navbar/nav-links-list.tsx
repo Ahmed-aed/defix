@@ -86,9 +86,8 @@ export const NavLinksList = ({
 
   return (
     <div
-      className={`${styles.navbarWrapper} ${
-        isSideMenu ? styles.sideMenuLinksWrapper : ''
-      }`}
+      className={`${styles.navbarWrapper} ${isSideMenu ? styles.sideMenuLinksWrapper : ''
+        }`}
     >
       <Link
         to={ROUTES.home}
@@ -99,24 +98,23 @@ export const NavLinksList = ({
           className='img-full'
           alt='ديفكس'
           src={
-            isWhiteBg
-              ? getValueByLang(data?.darkLogoAr, data?.whiteLogoEn)
-              : getValueByLang(data?.darkLogoAr, data?.darkLogoEn)
+            !isWhiteBg
+              ? getValueByLang(data?.darkLogoAr, data?.darkLogoEn)
+              : getValueByLang(data?.whiteLogoAr, data?.whiteLogoEn)
           }
         />
       </Link>
 
-      <ul className={styles.linksWrapper}>
+      <ul className={`${styles.linksWrapper} links-wrapper`}>
         {navLinks.map(navLinkItem => (
           <li key={navLinkItem.targetSection}>
             <Link
               onClick={e => handleNavLinkClick(e, navLinkItem.targetSection)}
               to={'#'}
-              className={`${
-                activeLinkItem === navLinkItem.targetSection
-                  ? styles.active
-                  : ''
-              }`}
+              className={`${activeLinkItem === navLinkItem.targetSection
+                ? styles.active
+                : ''
+                }`}
             >
               {getValueByLang(navLinkItem.nameAr, navLinkItem.nameEn)}
             </Link>
@@ -134,8 +132,9 @@ export const NavLinksList = ({
           </button>
         )}
 
-        <Link to='#' className={styles.ctaWrap}>
+        <Link to={`https://api.whatsapp.com/send/?phone=${data?.phone}`} className={`${styles.ctaWrap} ctaWrap`}>
           <Button onClick={closeSideMenu} type='outlined-white' fullRadius>
+
             <BiLang
               arValue={data?.TitleOurConnectWithUsAr}
               enValue={data?.TitleOurConnectWithUsEn}
@@ -143,6 +142,6 @@ export const NavLinksList = ({
           </Button>
         </Link>
       </div>
-    </div>
+    </div >
   );
 };

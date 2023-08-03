@@ -1,3 +1,5 @@
+import { manualTranslatedItems } from '../../constants';
+import { getValueByLang } from '../../utils';
 import MoreBtnLink from '../more-btn-link';
 import styles from './index.module.scss';
 
@@ -7,7 +9,6 @@ interface WebsiteCardProps {
   iconLink: string;
   iconHaveBg?: boolean;
   hovered?: boolean;
-  moreBtnLink?: string;
   onMoreBtnClick?: () => void;
   withDetailsBtn?: boolean;
 }
@@ -18,7 +19,6 @@ const WebsiteCard = ({
   iconLink,
   iconHaveBg,
   hovered,
-  moreBtnLink,
   onMoreBtnClick,
   withDetailsBtn = false,
 }: WebsiteCardProps) => {
@@ -44,11 +44,9 @@ const WebsiteCard = ({
       <>
         {withDetailsBtn && (
           <>
-            {moreBtnLink && (
-              <MoreBtnLink link={moreBtnLink} text='عرض التفاصيل' />
-            )}
+
             {onMoreBtnClick && (
-              <MoreBtnLink onClick={onMoreBtnClick} text='عرض التفاصيل' />
+              <MoreBtnLink onClick={onMoreBtnClick} text={getValueByLang(manualTranslatedItems?.showDetails?.ar, manualTranslatedItems?.showDetails?.en)} />
             )}
           </>
         )}

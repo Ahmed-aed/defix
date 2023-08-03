@@ -3,6 +3,7 @@ export const apiEndPoints = {
   footer: '/footer',
   body: '/body',
   service: '/service',
+  serviceDetails: (id: string) => `/service/details/${id}`,
   about: '/about',
   constructions: '/constructions',
   project: '/project',

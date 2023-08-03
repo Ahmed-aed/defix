@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { DetailsModal, ProjectsSection, Services } from '../../components';
 import PageWrapper from '../../components/page-wrapper';
 import { ServicesHero } from './components';
@@ -7,6 +7,7 @@ import { getValueByLang, importImageByProcessEnv } from '../../utils';
 import styles from './index.module.scss';
 import { useCallApi, useModalState } from '../../hooks';
 import { IServiceItem, IServiceDetails } from '../../models/services';
+import { manualTranslatedItems, ROUTES } from '../../constants';
 
 interface TitleConstructions {
   titleConstructionsAr: string;
@@ -17,6 +18,8 @@ interface TitleConstructions {
 }
 const Service = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate()
+
   const [modalData, setModalData] = useState<IServiceItem>();
   const { data, isLoading } = useCallApi<IServiceDetails>('/service');
   const { data: constructions, isLoading: loadingConstructions } =
@@ -36,9 +39,18 @@ const Service = () => {
   };
 
   const handleMoreBtnClick = (itemData: IServiceItem) => {
-    setModalData(itemData);
-    openModal();
+    if (itemData.business_id === 1) {
+
+      setModalData(itemData);
+      openModal();
+    }
+    else {
+      navigate(`${ROUTES.services}/${itemData.id}`)
+    }
+
+
   };
+  searchParams.get('selectedTab')
 
   return (
     <PageWrapper loading={isLoading || loadingConstructions}>
@@ -70,17 +82,17 @@ const Service = () => {
         selectedTab={activeTab}
         onDetailsBtnClick={handleMoreBtnClick}
       />
-      {/* <>
+      <>
         <h2
           data-aos='fade-up'
           data-aos-delay='150'
           className={styles.projectTitle}
         >
-           على مشاريعنا
-        </h2>
+          {
+            getValueByLang(manualTranslatedItems?.showProject?.ar, manualTranslatedItems?.showProject?.en)}        </h2>
 
-        <ProjectsSection className={styles.projectsSectionWrap} />
-      </> */}
+        <ProjectsSection imgDataProp={data?.business} isLoading={isLoading} className={styles.projectsSectionWrap} />
+      </>
 
       <DetailsModal
         onClosed={() => setModalData(undefined)}
